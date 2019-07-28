@@ -15,18 +15,15 @@ Vue.component(HasError.name, HasError);
 Vue.component(AlertError.name, AlertError);
 
 //Sweet Alert
-import Swal from 'sweetalert2';
-window.Swal = Swal;
-const toast = Swal.mixin({
-
-});
-const Toast = Swal.mixin({
+import swal from 'sweetalert2';
+window.swal = swal;
+const toast = swal.mixin({
     toast: true,
     position: 'top-end',
     showConfirmButton: false,
     timer: 3000
 });
-window.Toast = Toast;
+window.toast = toast;
 
 const router = new VueRouter({
     routes,

@@ -1875,6 +1875,11 @@ __webpack_require__.r(__webpack_exports__);
 
       this.form.post('/add-category').then(function (response) {
         _this.$router.push('/category-list');
+
+        toast.fire({
+          type: 'success',
+          title: response.data.message
+        });
       })["catch"](function (error) {
         console.log(error);
       });
@@ -56201,15 +56206,14 @@ Vue.component(vform__WEBPACK_IMPORTED_MODULE_2__["HasError"].name, vform__WEBPAC
 Vue.component(vform__WEBPACK_IMPORTED_MODULE_2__["AlertError"].name, vform__WEBPACK_IMPORTED_MODULE_2__["AlertError"]); //Sweet Alert
 
 
-window.Swal = sweetalert2__WEBPACK_IMPORTED_MODULE_3___default.a;
-var toast = sweetalert2__WEBPACK_IMPORTED_MODULE_3___default.a.mixin({});
-var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_3___default.a.mixin({
+window.swal = sweetalert2__WEBPACK_IMPORTED_MODULE_3___default.a;
+var toast = sweetalert2__WEBPACK_IMPORTED_MODULE_3___default.a.mixin({
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
   timer: 3000
 });
-window.Toast = Toast;
+window.toast = toast;
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   routes: _routes__WEBPACK_IMPORTED_MODULE_1__["routes"],
   mode: 'history'

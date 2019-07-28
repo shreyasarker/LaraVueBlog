@@ -43,7 +43,11 @@
             addCategory(){
                 this.form.post('/add-category')
                     .then((response) => {
-                        this.$router.push('/category-list')
+                        this.$router.push('/category-list');
+                        toast.fire({
+                            type: 'success',
+                            title: response.data.message
+                        })
                     })
                     .catch((error) => {
                         console.log(error)
