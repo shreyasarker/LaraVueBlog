@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function index(){
+        $categories = Category::all();
+        return response()->json([
+            'categories' => $categories
+        ]);
+    }
     public function store(Request $request){
         $request->validate([
             'cat_name' => 'required|min:2|max:50'
@@ -16,6 +22,6 @@ class CategoryController extends Controller
         $category->save();
         return response()->json([
             'message' => 'Category saved successfully!'
-        ]);
+        ], 200);
     }
 }

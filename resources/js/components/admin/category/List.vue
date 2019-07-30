@@ -22,12 +22,12 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Name</td>
+                                <tr v-for="(category, index) in getAllCategory" :key="category.id">
+                                    <td>{{ index + 1 }}</td>
+                                    <td>{{ category.cat_name }}</td>
                                     <td>
-                                        <a>Edit</a>
-                                        <a>Delete</a>
+                                        <a href="#">Edit</a>
+                                        <a href="#">Delete</a>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -42,7 +42,18 @@
 
 <script>
     export default {
-        name: "List"
+        name: "List",
+        mounted() {
+            this.$store.dispatch('getAllCategory')
+        },
+        computed: {
+            getAllCategory() {
+                return this.$store.getters.getCategory
+            }
+        },
+        methods: {
+
+        }
     }
 </script>
 

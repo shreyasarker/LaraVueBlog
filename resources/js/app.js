@@ -2,9 +2,20 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 // import Vue from 'vue';
+
+//Vuex
+import Vuex from 'vuex';
+Vue.use(Vuex);
+import storeData from './store/index';
+const store = new Vuex.Store(
+    storeData
+);
+
+//Vue-Router
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 import {routes} from './routes';
+
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('admin-main', require('./components/admin/AdminMaster').default);
 
@@ -27,9 +38,10 @@ window.toast = toast;
 
 const router = new VueRouter({
     routes,
-    mode: 'history'
+    mode: 'hash'
 });
 const app = new Vue({
     router,
+    store,
     el: '#app',
 });
