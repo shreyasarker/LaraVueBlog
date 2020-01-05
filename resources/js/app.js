@@ -21,9 +21,9 @@ Vue.component('admin-main', require('./components/admin/AdminMaster').default);
 
 //V-form
 import { Form, HasError, AlertError } from 'vform';
-window.Form = Form;
 Vue.component(HasError.name, HasError);
 Vue.component(AlertError.name, AlertError);
+window.Form = Form;
 
 //Sweet Alert
 import swal from 'sweetalert2';
@@ -36,9 +36,12 @@ const toast = swal.mixin({
 });
 window.toast = toast;
 
+//Moment.JS
+import moment from 'moment';
+
 const router = new VueRouter({
     routes,
-    mode: 'hash'
+    mode: 'history'
 });
 const app = new Vue({
     router,

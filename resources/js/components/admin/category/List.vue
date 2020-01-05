@@ -18,13 +18,15 @@
                                 <tr>
                                     <th>SI</th>
                                     <th>Category Name</th>
-                                    <th> Action</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr v-for="(category, index) in getAllCategory" :key="category.id">
                                     <td>{{ index + 1 }}</td>
                                     <td>{{ category.cat_name }}</td>
+                                    <td>{{ category.created_at }}</td>
                                     <td>
                                         <a href="#">Edit</a>
                                         <a href="#">Delete</a>
