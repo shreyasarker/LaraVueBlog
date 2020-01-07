@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
-use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
@@ -15,11 +15,7 @@ class CategoryController extends Controller
             'categories' => $categories
         ], 200);
     }
-    public function store(Request $request){
-
-        $request->validate([
-            'cat_name' => 'required|min:2|max:50'
-        ]);
+    public function store(CategoryRequest $request){
 
         try{
 
@@ -60,10 +56,7 @@ class CategoryController extends Controller
             'category' => $category
         ], 200);
     }
-    public function update($id, Request $request){
-        $request->validate([
-            'cat_name' => 'required|min:2|max:50'
-        ]);
+    public function update($id, CategoryRequest $request){
 
         try{
 
