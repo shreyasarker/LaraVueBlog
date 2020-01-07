@@ -30,4 +30,17 @@ class CategoryController extends Controller
             ], 400);
         }
     }
+    public function delete($id){
+        try{
+           Category::findOrFail($id)->delete();
+
+            return response()->json([
+                'message' => 'Category deleted successfully!'
+            ], 200);
+        }catch (\Exception $e){
+            return response()->json([
+                'message' => $e->getMessage()
+            ], 400);
+        }
+    }
 }
