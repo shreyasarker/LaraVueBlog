@@ -36,6 +36,9 @@ window.toast = toast;
 
 //Moment.JS
 import moment from 'moment';
+Vue.filter('time_format', (arg) => {
+    return moment(arg).format('Do MMM, YYYY');
+});
 
 const router = new VueRouter({
     routes,

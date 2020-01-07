@@ -58809,12 +58809,16 @@ var render = function() {
                   _c(
                     "tbody",
                     _vm._l(_vm.getAllCategory, function(category, index) {
-                      return _c("tr", { key: category.id }, [
+                      return _c("tr", [
                         _c("td", [_vm._v(_vm._s(index + 1))]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(category.cat_name))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(category.created_at))]),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(_vm._f("time_format")(category.created_at))
+                          )
+                        ]),
                         _vm._v(" "),
                         _vm._m(1, true)
                       ])
@@ -74887,6 +74891,9 @@ var toast = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.mixin({
 window.toast = toast; //Moment.JS
 
 
+Vue.filter('time_format', function (arg) {
+  return moment__WEBPACK_IMPORTED_MODULE_6___default()(arg).format('Do MMM, YYYY');
+});
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   routes: _routes__WEBPACK_IMPORTED_MODULE_3__["routes"],
   mode: 'hash'

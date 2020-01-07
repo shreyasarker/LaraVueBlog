@@ -26,7 +26,7 @@
                                 <tr v-for="(category, index) in getAllCategory">
                                     <td>{{ index + 1 }}</td>
                                     <td>{{ category.cat_name }}</td>
-                                    <td>{{ category.created_at }}</td>
+                                    <td>{{ category.created_at | time_format }}</td>
                                     <td>
                                         <a href="#">Edit</a>
                                         <a href="#">Delete</a>
