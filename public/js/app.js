@@ -74857,8 +74857,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vform__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./filter */ "./resources/js/filter.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // import Vue from 'vue';
@@ -74888,12 +74887,9 @@ var toast = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.mixin({
   showConfirmButton: false,
   timer: 3000
 });
-window.toast = toast; //Moment.JS
+window.toast = toast; //Moment.JS and filter
 
 
-Vue.filter('time_format', function (arg) {
-  return moment__WEBPACK_IMPORTED_MODULE_6___default()(arg).format('Do MMM, YYYY');
-});
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   routes: _routes__WEBPACK_IMPORTED_MODULE_3__["routes"],
   mode: 'hash'
@@ -75239,6 +75235,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_New_vue_vue_type_template_id_b23e9c8c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/filter.js":
+/*!********************************!*\
+  !*** ./resources/js/filter.js ***!
+  \********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('time_format', function (arg) {
+  return moment__WEBPACK_IMPORTED_MODULE_1___default()(arg).format('Do MMM, YYYY');
+});
 
 /***/ }),
 

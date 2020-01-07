@@ -34,11 +34,9 @@ const toast = swal.mixin({
 });
 window.toast = toast;
 
-//Moment.JS
-import moment from 'moment';
-Vue.filter('time_format', (arg) => {
-    return moment(arg).format('Do MMM, YYYY');
-});
+//Moment.JS and filter
+import {filter} from './filter';
+
 
 const router = new VueRouter({
     routes,
