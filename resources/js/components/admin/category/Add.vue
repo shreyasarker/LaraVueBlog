@@ -31,7 +31,7 @@
 
 <script>
     export default {
-        name: "New",
+        name: "Add",
         data() {
             return {
                 form: new Form({
@@ -41,7 +41,7 @@
         },
         methods: {
             addCategory(){
-                this.form.post('/add-category')
+                this.form.post('/category/add')
                     .then((response) => {
                         this.$router.push('/category-list');
                         toast.fire({
