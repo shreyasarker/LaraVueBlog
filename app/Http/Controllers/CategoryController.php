@@ -17,11 +17,17 @@ class CategoryController extends Controller
         $request->validate([
             'cat_name' => 'required|min:2|max:50'
         ]);
-        $category = new Category();
-        $category->cat_name = $request->cat_name;
-        $category->save();
-        return response()->json([
-            'message' => 'Category saved successfully!'
-        ], 200);
+        try{
+            $category = Category::create([
+                'cat_name' => $request->cat_name
+            ]);
+            return response()->json([
+                'message' => 'Category saved successfully!'
+            ], 200);
+        }catch (\Exception $e){
+            return response()->json([
+                'message' => 'Category not saved!'
+            ], 400);
+        }
     }
 }
