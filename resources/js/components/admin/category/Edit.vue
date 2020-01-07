@@ -40,14 +40,14 @@
             }
         },
         mounted(){
-            axios.get('category/edit/'+this.$route.params.id)
+            axios.get('categories/edit/'+this.$route.params.id)
                 .then((response) => {
                     this.form.fill(response.data.category)
                 })
         },
         methods: {
             editCategory(){
-                this.form.post('/category/edit/'+this.$route.params.id)
+                this.form.post('/categories/edit/'+this.$route.params.id)
                     .then((response) => {
                         this.$router.push('/category-list');
                         toast.fire({

@@ -21,8 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/{anypath}', 'HomeController@index')->where('path', '.*');
 
 //Category
-Route::post('category/add', 'CategoryController@store');
-Route::get('category', 'CategoryController@index');
-Route::get('category/delete/{id}', 'CategoryController@delete');
-Route::get('category/edit/{id}', 'CategoryController@edit');
-Route::post('category/edit/{id}', 'CategoryController@update');
+Route::post('categories/add', 'CategoryController@store');
+Route::get('categories', 'CategoryController@index');
+Route::get('categories/delete/{id}', 'CategoryController@delete');
+Route::get('categories/edit/{id}', 'CategoryController@edit');
+Route::post('categories/edit/{id}', 'CategoryController@update');

@@ -55,7 +55,7 @@
         },
         methods: {
             deleteCategory(id){
-                axios.get('/category/delete/'+id)
+                axios.get('/categories/delete/'+id)
                     .then((response)=>{
                         this.$store.dispatch('getAllCategory')
                         toast.fire({

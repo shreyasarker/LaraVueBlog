@@ -41,7 +41,7 @@
         },
         methods: {
             addCategory(){
-                this.form.post('/category/add')
+                this.form.post('/categories/add')
                     .then((response) => {
                         this.$router.push('/category-list');
                         toast.fire({

@@ -1816,7 +1816,7 @@ __webpack_require__.r(__webpack_exports__);
     addCategory: function addCategory() {
       var _this = this;
 
-      this.form.post('/category/add').then(function (response) {
+      this.form.post('/categories/add').then(function (response) {
         _this.$router.push('/category-list');
 
         toast.fire({
@@ -1884,7 +1884,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('category/edit/' + this.$route.params.id).then(function (response) {
+    axios.get('categories/edit/' + this.$route.params.id).then(function (response) {
       _this.form.fill(response.data.category);
     });
   },
@@ -1892,7 +1892,7 @@ __webpack_require__.r(__webpack_exports__);
     editCategory: function editCategory() {
       var _this2 = this;
 
-      this.form.post('/category/edit/' + this.$route.params.id).then(function (response) {
+      this.form.post('/categories/edit/' + this.$route.params.id).then(function (response) {
         _this2.$router.push('/category-list');
 
         toast.fire({
@@ -1973,7 +1973,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteCategory: function deleteCategory(id) {
       var _this = this;
 
-      axios.get('/category/delete/' + id).then(function (response) {
+      axios.get('/categories/delete/' + id).then(function (response) {
         _this.$store.dispatch('getAllCategory');
 
         toast.fire({
@@ -75603,7 +75603,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     getAllCategory: function getAllCategory(context) {
-      axios.get('/category').then(function (response) {
+      axios.get('/categories').then(function (response) {
         context.commit('categories', response.data.categories);
       });
     }

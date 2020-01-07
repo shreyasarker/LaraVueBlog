@@ -9,7 +9,7 @@ export default {
     },
     actions: {
         getAllCategory(context) {
-            axios.get('/category')
+            axios.get('/categories')
                 .then((response) => {
                     context.commit('categories', response.data.categories);
                 })
