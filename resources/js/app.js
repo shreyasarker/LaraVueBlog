@@ -7,9 +7,7 @@ window.Vue = require('vue');
 import Vuex from 'vuex';
 Vue.use(Vuex);
 import storeData from './store/index';
-const store = new Vuex.Store(
-    storeData
-);
+const store = new Vuex.Store(storeData);
 
 //Vue-Router
 import VueRouter from 'vue-router';
@@ -27,7 +25,7 @@ window.Form = Form;
 
 //Sweet Alert
 import swal from 'sweetalert2';
-window.swal = swal;
+// window.swal = swal;
 const toast = swal.mixin({
     toast: true,
     position: 'top-end',
@@ -41,7 +39,7 @@ import moment from 'moment';
 
 const router = new VueRouter({
     routes,
-    mode: 'history'
+    mode: 'hash'
 });
 const app = new Vue({
     router,

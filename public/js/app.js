@@ -74876,8 +74876,8 @@ Vue.component(vform__WEBPACK_IMPORTED_MODULE_4__["HasError"].name, vform__WEBPAC
 Vue.component(vform__WEBPACK_IMPORTED_MODULE_4__["AlertError"].name, vform__WEBPACK_IMPORTED_MODULE_4__["AlertError"]);
 window.Form = vform__WEBPACK_IMPORTED_MODULE_4__["Form"]; //Sweet Alert
 
+ // window.swal = swal;
 
-window.swal = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a;
 var toast = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.mixin({
   toast: true,
   position: 'top-end',
@@ -74889,7 +74889,7 @@ window.toast = toast; //Moment.JS
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   routes: _routes__WEBPACK_IMPORTED_MODULE_3__["routes"],
-  mode: 'history'
+  mode: 'hash'
 });
 var app = new Vue({
   router: router,
@@ -75275,11 +75275,11 @@ var routes = [{
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   state: {
-    category: []
+    categories: []
   },
   getters: {
     getCategory: function getCategory(state) {
-      return state.category;
+      return state.categories;
     }
   },
   actions: {
@@ -75291,7 +75291,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mutations: {
     categories: function categories(state, context) {
-      return state.category = context;
+      return state.categories = context;
     }
   }
 });

@@ -1,10 +1,10 @@
 export default {
     state: {
-        category: [],
+        categories: [],
     },
     getters: {
         getCategory(state) {
-            return state.category
+            return state.categories
         }
     },
     actions: {
@@ -17,7 +17,7 @@ export default {
     },
     mutations: {
         categories(state, context) {
-            return state.category = context;
+            return state.categories = context;
         }
     }
 }

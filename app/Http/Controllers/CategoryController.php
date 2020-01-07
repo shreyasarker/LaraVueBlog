@@ -8,17 +8,17 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index(){
-        $categories = Category::all();
+        $categories = Category::orderBy('id', 'desc')->get();
         return response()->json([
             'categories' => $categories
-        ]);
+        ], 200);
     }
     public function store(Request $request){
         $request->validate([
             'cat_name' => 'required|min:2|max:50'
         ]);
         try{
-            $category = Category::create([
+            Category::create([
                 'cat_name' => $request->cat_name
             ]);
             return response()->json([

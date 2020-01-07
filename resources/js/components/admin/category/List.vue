@@ -23,7 +23,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr v-for="(category, index) in getAllCategory" :key="category.id">
+                                <tr v-for="(category, index) in getAllCategory">
                                     <td>{{ index + 1 }}</td>
                                     <td>{{ category.cat_name }}</td>
                                     <td>{{ category.created_at }}</td>
