@@ -75603,7 +75603,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     getAllCategory: function getAllCategory(context) {
-      axios.get('/all-category').then(function (response) {
+      axios.get('/category').then(function (response) {
         context.commit('categories', response.data.categories);
       });
     }
