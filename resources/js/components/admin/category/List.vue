@@ -23,7 +23,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr v-for="(category, index) in getAllCategory">
+                                <tr v-for="(category, index) in categories">
                                     <td>{{ index + 1 }}</td>
                                     <td>{{ category.cat_name }}</td>
                                     <td>{{ category.created_at | time_format }}</td>
@@ -46,10 +46,10 @@
     export default {
         name: "List",
         mounted() {
-            this.$store.dispatch('getAllCategory')
+            this.$store.dispatch('categories')
         },
         computed: {
-            getAllCategory() {
+            categories() {
                 return this.$store.getters.getCategory
             }
         },
@@ -57,7 +57,7 @@
             deleteCategory(id){
                 axios.get('/categories/delete/'+id)
                     .then((response)=>{
-                        this.$store.dispatch('getAllCategory')
+                        this.$store.dispatch('categories');
                         toast.fire({
                             type : 'success',
                             title : response.data.message
