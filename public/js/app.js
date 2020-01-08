@@ -2049,7 +2049,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "List"
+  name: "List",
+  mounted: function mounted() {
+    this.$store.dispatch('posts');
+  },
+  computed: {},
+  methods: {}
 });
 
 /***/ }),
@@ -59292,7 +59297,7 @@ var render = function() {
   return _c("div", [
     _c("section", { staticClass: "content" }, [
       _c("div", { staticClass: "row justify-content-around" }, [
-        _c("div", { staticClass: "col-8" }, [
+        _c("div", { staticClass: "col-12" }, [
           _c("div", { staticClass: "card" }, [
             _c("div", { staticClass: "card-header" }, [
               _c("h3", { staticClass: "card-title" }, [_vm._v("Post List")]),
@@ -75925,7 +75930,8 @@ var routes = [{
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   state: {
-    categories: []
+    categories: [],
+    posts: []
   },
   getters: {
     getCategory: function getCategory(state) {
@@ -75933,15 +75939,23 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   actions: {
-    categories: function categories(context) {
+    categories: function categories(payload) {
       axios.get('/categories').then(function (response) {
-        context.commit('categories', response.data.categories);
+        payload.commit('categories', response.data.categories);
+      });
+    },
+    posts: function posts() {
+      axois.post('/posts').then(function (response) {
+        commit('posts', response.data.posts);
       });
     }
   },
   mutations: {
-    categories: function categories(state, context) {
-      return state.categories = context;
+    categories: function categories(state, payload) {
+      return state.categories = payload;
+    },
+    post: function post(state, payload) {
+      return state.posts = payload;
     }
   }
 });
