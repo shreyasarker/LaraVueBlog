@@ -9,16 +9,16 @@ export default {
         }
     },
     actions: {
-        categories(payload) {
+        categories(context) {
             axios.get('/categories')
                 .then((response) => {
-                    payload.commit('categories', response.data.categories);
+                    context.commit('categories', response.data.categories);
                 })
         },
-        posts(){
+        posts(context){
             axois.post('/posts')
                 .then((response) => {
-                  commit('posts', response.data.posts);
+                  context.commit('posts', response.data.posts);
                 })
         }
     },

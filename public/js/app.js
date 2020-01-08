@@ -75939,14 +75939,14 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   actions: {
-    categories: function categories(payload) {
+    categories: function categories(context) {
       axios.get('/categories').then(function (response) {
-        payload.commit('categories', response.data.categories);
+        context.commit('categories', response.data.categories);
       });
     },
-    posts: function posts() {
+    posts: function posts(context) {
       axois.post('/posts').then(function (response) {
-        commit('posts', response.data.posts);
+        context.commit('posts', response.data.posts);
       });
     }
   },
