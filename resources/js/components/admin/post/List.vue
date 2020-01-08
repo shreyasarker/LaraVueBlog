@@ -21,7 +21,7 @@
                                     <th>Category</th>
                                     <th>Title</th>
                                     <th>Description</th>
-                                    <th>Date</th>
+                                    <th>Photo</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -32,7 +32,7 @@
                                     <td>{{ post.category.cat_name }}</td>
                                     <td>{{ post.title }}</td>
                                     <td>{{ post.description }}</td>
-                                    <td>{{ post.created_at | time_format }}</td>
+                                    <td><img :src="post.photo" alt="Post photo" width="50" height="50"></td>
                                     <td>
                                         <a href="">Edit</a>
                                         <a href="#">Delete</a>

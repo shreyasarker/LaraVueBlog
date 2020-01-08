@@ -59348,7 +59348,14 @@ var render = function() {
                         _c("td", [_vm._v(_vm._s(post.description))]),
                         _vm._v(" "),
                         _c("td", [
-                          _vm._v(_vm._s(_vm._f("time_format")(post.created_at)))
+                          _c("img", {
+                            attrs: {
+                              src: post.photo,
+                              alt: "Post photo",
+                              width: "50",
+                              height: "50"
+                            }
+                          })
                         ]),
                         _vm._v(" "),
                         _vm._m(1, true)
@@ -59382,7 +59389,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Description")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Date")]),
+        _c("th", [_vm._v("Photo")]),
         _vm._v(" "),
         _c("th", [_vm._v("Action")])
       ])
