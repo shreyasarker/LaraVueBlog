@@ -6,6 +6,9 @@ export default {
     getters: {
         getCategory(state) {
             return state.categories
+        },
+        getPost(state){
+            return state.posts
         }
     },
     actions: {
@@ -16,7 +19,7 @@ export default {
                 })
         },
         posts(context){
-            axois.post('/posts')
+            axios.get('/posts')
                 .then((response) => {
                   context.commit('posts', response.data.posts);
                 })
@@ -26,7 +29,7 @@ export default {
         categories(state, payload) {
             return state.categories = payload;
         },
-        post(state, payload){
+        posts(state, payload){
             return state.posts = payload
         }
     }

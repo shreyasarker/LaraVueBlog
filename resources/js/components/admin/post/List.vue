@@ -20,21 +20,19 @@
                                     <th>User</th>
                                     <th>Category</th>
                                     <th>Title</th>
-                                    <th>Desciption</th>
-                                    <th>Post</th>
+                                    <th>Description</th>
                                     <th>Date</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr v-for="(post, index) in posts">
+                                    <td>{{ index + 1 }}</td>
+                                    <td>{{ post.user.name }}</td>
+                                    <td>{{ post.category.cat_name }}</td>
+                                    <td>{{ post.title }}</td>
+                                    <td>{{ post.description }}</td>
+                                    <td>{{ post.created_at | time_format }}</td>
                                     <td>
                                         <a href="">Edit</a>
                                         <a href="#">Delete</a>
@@ -57,7 +55,9 @@
             this.$store.dispatch('posts');
         },
         computed: {
-
+            posts(){
+                return this.$store.getters.getPost
+            }
         },
         methods: {
 
