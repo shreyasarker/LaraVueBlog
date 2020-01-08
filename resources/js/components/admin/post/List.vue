@@ -30,8 +30,8 @@
                                     <td>{{ index + 1 }}</td>
                                     <td>{{ post.user.name }}</td>
                                     <td>{{ post.category.cat_name }}</td>
-                                    <td>{{ post.title }}</td>
-                                    <td>{{ post.description }}</td>
+                                    <td>{{ post.title | shorttext(20) }}</td>
+                                    <td>{{ post.description | shorttext(30) }}</td>
                                     <td><img :src="post.photo" alt="Post photo" width="50" height="50"></td>
                                     <td>
                                         <a href="">Edit</a>

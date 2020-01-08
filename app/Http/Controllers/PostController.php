@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index(){
 
-        $posts = Post::orderBy('id', 'desc')->with(['user', 'category'])->get();
+        $posts = Post::orderBy('id', 'desc')->with('user', 'category')->get();
 
         return response()->json([
             'posts' => $posts,

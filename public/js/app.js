@@ -59343,9 +59343,15 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(post.category.cat_name))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(post.title))]),
+                        _c("td", [
+                          _vm._v(_vm._s(_vm._f("shorttext")(post.title, 20)))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(post.description))]),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(_vm._f("shorttext")(post.description, 30))
+                          )
+                        ]),
                         _vm._v(" "),
                         _c("td", [
                           _c("img", {
@@ -75883,6 +75889,9 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('time_format', function (arg) {
   return moment__WEBPACK_IMPORTED_MODULE_1___default()(arg).format('Do MMM, YYYY');
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('shorttext', function (arg, length) {
+  return arg.substring(0, length) + '...';
 });
 
 /***/ }),
