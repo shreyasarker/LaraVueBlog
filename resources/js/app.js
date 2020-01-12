@@ -25,7 +25,7 @@ window.Form = Form;
 
 //Sweet Alert
 import swal from 'sweetalert2';
-// window.swal = swal;
+window.swal = swal;
 const toast = swal.mixin({
     toast: true,
     position: 'top-end',
@@ -37,6 +37,9 @@ window.toast = toast;
 //Moment.JS and filter
 import {filter} from './filter';
 
+//Editor
+import wysiwyg from "vue-wysiwyg";
+Vue.use(wysiwyg, {});
 
 const router = new VueRouter({
     routes,

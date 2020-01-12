@@ -19,8 +19,9 @@ export default {
                 })
         },
         posts(context){
-            axios.get('/posts')
+            axios.get('/blogposts')
                 .then((response) => {
+                    console.log(response)
                   context.commit('posts', response.data.posts);
                 })
         }

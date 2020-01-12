@@ -27,8 +27,8 @@ Route::get('categories/delete/{id}', 'CategoryController@delete');
 Route::get('categories/edit/{id}', 'CategoryController@edit');
 Route::post('categories/edit/{id}', 'CategoryController@update');
 
-Route::post('posts/add', 'PostController@store');
-Route::get('posts', 'PostController@index');
-Route::get('posts/delete/{id}', 'PostController@delete');
-Route::get('posts/edit/{id}', 'PostController@edit');
-Route::post('posts/edit/{id}', 'PostController@update');
+Route::get('blogposts', 'PostController@index');
+Route::post('blogposts/add', 'PostController@store');
+Route::get('blogposts/delete/{id}', 'PostController@delete');
+Route::get('blogposts/edit/{id}', 'PostController@edit');
+Route::post('blogposts/edit/{id}', 'PostController@update');
