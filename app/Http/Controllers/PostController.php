@@ -47,4 +47,26 @@ class PostController extends Controller
             ], 400);
         }
     }
+    public function delete($id){
+        try{
+
+            $post = Post::findOrFail($id);
+
+            $image = public_path().'/posts/'.$post->photo;
+            if(file_exists($image)){
+                @unlink($image);
+            }
+            $post->delete();
+
+            return response()->json([
+                'message' => 'Post deleted successfully!'
+            ], 200);
+
+        }catch (\Exception $e){
+
+            return response()->json([
+                'message' => $e->getMessage()
+            ], 400);
+        }
+    }
 }

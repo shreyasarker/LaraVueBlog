@@ -35,7 +35,7 @@
                                     <td><img :src="showImage(post.photo)" alt="Post photo" width="50" height="50"></td>
                                     <td>
                                         <a href="">Edit</a>
-                                        <a href="#">Delete</a>
+                                        <a href="#" @click.prevent="deletePost(post.id)">Delete</a>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -62,6 +62,16 @@
         methods: {
             showImage(image){
                 return 'posts/' + image;
+            },
+            deletePost(id){
+                axios.get('/blogposts/delete/'+id)
+                    .then((response)=>{
+                        this.$store.dispatch('posts');
+                        toast.fire({
+                            type : 'success',
+                            title : response.data.message
+                        });
+                    })
             }
         }
     }
