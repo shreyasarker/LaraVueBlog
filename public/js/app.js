@@ -2185,7 +2185,11 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters.getPost;
     }
   },
-  methods: {}
+  methods: {
+    showImage: function showImage(image) {
+      return 'posts/' + image;
+    }
+  }
 });
 
 /***/ }),
@@ -59723,7 +59727,7 @@ var render = function() {
                         _c("td", [
                           _c("img", {
                             attrs: {
-                              src: post.photo,
+                              src: _vm.showImage(post.photo),
                               alt: "Post photo",
                               width: "50",
                               height: "50"
