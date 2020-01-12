@@ -34,7 +34,7 @@
                                     <td>{{ post.description | shorttext(30) }}</td>
                                     <td><img :src="showImage(post.photo)" alt="Post photo" width="50" height="50"></td>
                                     <td>
-                                        <a href="">Edit</a>
+                                        <router-link :to="`/edit-post/${post.id}`">Edit</router-link>
                                         <a href="#" @click.prevent="deletePost(post.id)">Delete</a>
                                     </td>
                                 </tr>
@@ -61,7 +61,7 @@
         },
         methods: {
             showImage(image){
-                return 'posts/' + image;
+                return 'post_images/' + image;
             },
             deletePost(id){
                 axios.get('/blogposts/delete/'+id)
